@@ -1,0 +1,95 @@
+<!--
+Resources:
+-https://stackoverflow.com/questions/2144386/how-to-delete-a-cookie
+-https://php.net/manual/en/function.session-destroy.php
+-https://jwt.io/introduction/
+-https://codular.com/curl-with-php
+-->
+
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<!--CSS -->
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="/js/jquery/3.3.1/jquery-3.3.1.min.js"></script>
+<!--bootstrap's javascript -->
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<title>Login Page</title>
+
+<script>
+  $('.message a').click(function() {
+  $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+  });
+</script>
+
+</head>
+<body>
+
+	<div align="center">
+  	<h5 style="max-width: 420px; margin-top:20px; text-align: center;"><strong>Login here</strong></h5>
+  	<div id="login_error"></div>
+	</div>
+
+<!-- Login Start -->
+	<form action="./php/authenticate.php" method="post">
+	<script>
+	  var url = window.location.href;
+	  if( url.search( 'badLogin' ) > 0 ) {
+	      document.getElementById("login_error").innerHTML =  "*There was an error with this username or password. Please try again.*";
+	  }
+	  else if( url.search( 'user_exists' ) > 0 ) {
+	      document.getElementById("login_error").innerHTML =  "*User account already exists. Please enter your password.*";
+	  }
+	  else if( url.search( 'bad_JWT' ) > 0 ) {
+	  document.getElementById("login_error").innerHTML =  "*Failed to authenticate user account.*";
+	  }
+	</script>
+	<div>
+		<div class="form">
+		<input id="username" name="username" type="text" placeholder="enter username" required/>
+		<input id="password" name="password" type="password" placeholder="enter password" required/>
+		<button>login</button>
+
+		<p></p>
+
+		</div>
+	</div>
+	</form>
+
+	<!--New User Basic Modal Popup source: https://getbootstrap.com/docs/4.1/components/modal/-->
+  <form action="./php/new_user.php" method="post">
+    <div class="form">
+
+    <button type="button" data-toggle="modal" data-target="#myModal">Create New User</button>
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+        <!--Content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">New User</h4>
+            </div>
+              <div class="modal-body">
+                <input id="new_username" name="username" type="text" placeholder="enter username" required/>
+                <input id="new_password" name="password" type="password" placeholder="enter password" required/>
+                <button>submit</button>
+              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--New User Basic Modal Popup End-->
+    </div>
+  </form>
+
+  &nbsp;
+
+</body>
+</html>
