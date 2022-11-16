@@ -2,18 +2,12 @@
 
 ##### Languages:
 
-### Languages:
-
-## Languages:
-
-# Languages:
-
 * HTML / CSS
 * JavaScript
 * PHP 7
 * SQL: mySQL database
 
-######Development Tools:
+###### Development Tools:
 
  - [SourceTree](https://www.sourcetreeapp.com/)
  - [Bitbucket](https://bitbucket.org)
@@ -22,9 +16,9 @@
  - [Browserstack](https://www.browserstack.com/)
 
 
-###External libraries and code-snippets
+### External libraries and code-snippets
 
-######Libraries
+###### ibraries
 
 | Name | Version | Purpose | License | Website |
 |:------- |:----- |:----- |:----- |:----- |
@@ -33,7 +27,7 @@
 | Composer | v1.8.4 | PHP dependencies manager (for Firebase) | [Link](https://github.com/composer/composer/blob/master/LICENSE) | [Composer](https://getcomposer.org/) |
 | Firebase/php-jwt | v5.0.0 | To encode and decode JWTs | [Link](https://github.com/firebase/php-jwt/blob/master/LICENSE) |  [Firebase/php-jwt](https://github.com/firebase/php-jwt) |
 
-######Code Snippets
+###### Code Snippets
 
 | Purpose | Author | Link to source |
 |:------- |:----- |:----- |
