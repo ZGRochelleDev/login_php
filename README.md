@@ -1,4 +1,4 @@
-#### Sources:
+### Sources:
 
 ###### Languages:
 
@@ -18,7 +18,7 @@
 
 ### External libraries and code-snippets
 
-###### ibraries
+###### Libraries
 
 | Name | Version | Purpose | License | Website |
 |:------- |:----- |:----- |:----- |:----- |
