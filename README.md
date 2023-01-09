@@ -37,3 +37,25 @@
 | cURL Requests with PHP | [michaelw90](https://twitter.com/michaelw90) | [Link](https://codular.com/curl-with-php) |
 
 ---
+
+
+function Refresh-Chrome {
+    Write-Output 'starting'
+    while(1) { # Loop forever
+        $sleep_time = 180
+        Write-Output "sleeping for $sleep_time seconds"
+        sleep -Seconds $sleep_time # Wait 3 minutes
+        $wshell = New-Object -ComObject wscript.shell 
+        if($wshell.AppActivate('Chrome')) { # Switch to Chrome
+            Write-Output 'refreshing'
+            Sleep 1 # Wait for Chrome to "activate"
+            $wshell.SendKeys('{F5}')  # Send F5 (Refresh)
+        }
+        else {
+            Write-Output 'breaking loop'
+            break;
+        } # Chrome not open, exit the loop
+    }
+}
+#Refresh-WebPages
+Refresh-Chrome
